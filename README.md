@@ -9,6 +9,8 @@
 npm create name
 ```
 
+
+Va a reconstruir los modulos desde cero, en caso de que esten corruptos los datos, eliminados, **ABRIR EN OTRA TERMINAL**
 ```
 npm install
 ```
@@ -170,3 +172,14 @@ Dos librerias para test unitarios: Jest, Mocha + Chai
 - la sección que me permite programar con javaScript es **script**, y los estilos es **style** y para html es **template**
 
 
+- cada componente maneja una sesion independiente
+
+## Propiedades Computadas
+
+- son identificadores si un metodo tiene el mismo resultado, optimiza y reutiliza el calculo antes calculado.
+
+- caso contrario los resultados se obtienen de cache
+
+- sin **parentesis** los metodos se las propiedades computadas
+
+-entre componentes se puede editar el estilo para darle una distincion dado el estilo del componente principal. Para el componente que queramos cambiar, se debe agregar un **valor variable** desde la clase padre. Dicho componente se denomina **props** o properties 
