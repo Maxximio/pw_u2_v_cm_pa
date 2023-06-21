@@ -1,18 +1,19 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <Contador titulo="Estudiante" valor2="2"/>
-  <Contador titulo="Profesor" valor2="2"/>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <Contador titulo="Estudiante" v-bind:inicio="4 + 2" />
+  <!-- <Contador titulo="Profesor" :inicio="'test'.length" /> -->
+  <Contador titulo="Profesor" :inicio="101" />
 </template>
 
 <script>
-import Contador from './components/Contador.vue';
+import Contador from "./components/Contador.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Contador 
+    Contador,
   },
-}
+};
 </script>
 
 <style>

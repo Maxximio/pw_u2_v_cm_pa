@@ -182,4 +182,15 @@ Dos librerias para test unitarios: Jest, Mocha + Chai
 
 - sin **parentesis** los metodos se las propiedades computadas
 
--entre componentes se puede editar el estilo para darle una distincion dado el estilo del componente principal. Para el componente que queramos cambiar, se debe agregar un **valor variable** desde la clase padre. Dicho componente se denomina **props** o properties 
+- entre componentes se puede editar el estilo para darle una distincion dado el estilo del componente principal. Para el componente que queramos cambiar, se debe agregar un **valor variable** desde la clase padre. Dicho componente se denomina **props** o properties.
+
+- Es posible remplazar `v-on:click=` por `@click=` 
+
+- los props tienen una forma mas de eficiente de validar
+
+- `v:bind  ` para tratar todo como JS: de lo contrario se van a agregar de forma de String, el atajo es `:`
+
+dentro del prop existe una configuracion
+me permite validar el valor que esta enviandose en el props
+
+cual es el mecanismo que tiene vue para comunicarse entre los componentes padres y los componentes hijos: props
