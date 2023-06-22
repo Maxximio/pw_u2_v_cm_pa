@@ -194,3 +194,7 @@ dentro del prop existe una configuracion
 me permite validar el valor que esta enviandose en el props
 
 cual es el mecanismo que tiene vue para comunicarse entre los componentes padres y los componentes hijos: props
+
+API (Application Programming Interface): de un conjunto de protocolos (**Servicios Web** (Restful, Soap), Cola de mensajeria, ....), definiciones (urls, el nombre de la API) y contratos (defino las directrices que se deben cumplir, lo que recibo del frontEnd al backEnd), que me permiten interconectar/interoperar/integrar componentes de software.
+
+comunmente el frontend con el backend
