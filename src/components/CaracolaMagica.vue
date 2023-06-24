@@ -1,6 +1,6 @@
 <template>
   
-    <h1>Caracola Magica</h1>
+    <h1>Tres veces si</h1>
     <img v-if="imagen"
       :src="imagen"
       alt="No se puede presentar"
@@ -10,10 +10,11 @@
     <div class="bg-dark">
     </div>
   <div class="container">
-    <input v-model="pregunta" placeholder="Ingrese su pregunta" />
-    <p>Recuerda presionar Enter para obtener tu respuesta</p>
+    <!-- <input v-model="pregunta" placeholder="Ingrese su pregunta" /> -->
+    <button @click="consumirApi">Suerte</button>
+    <p>Presione el boton y si obtiene si 3 veces "si", usted gana!!!</p>
     <div>
-      <h2>{{pregunta}}</h2>
+      <!-- <h2>{{pregunta}}</h2> -->
       <h3>{{respuesta}}</h3>
     </div>
   </div>
@@ -25,21 +26,53 @@
 export default {
   data() {
     return {
-      pregunta: "",
+      // pregunta: "",
       imagen: null,
       respuesta: "",
+      contadorSi: 0,
+      contadorNo: 0,
+      respuestaAnterior: '',
     };
   },
 
   watch: {
-    pregunta(value, oldValue) {
-      console.log(value);
-      console.log(oldValue);
-      if (value.includes("?")) {
-        console.log("consumio el Api");
-        this.consumirApi()
+
+    respuesta(value) {
+      if(this.respuestaAnterior==='yes' && value===yes ){
+          this.contadorSi++;
+        }else{
+
+      if (value === "yes") {
+        this.respuestaAnterior==='yes'
+        this.contadorSi++;
+        console.log(this.contadorSi);
+        if (this.contadorSi === 3) {
+          this.respuesta='Felicidades Usted ha Ganado!!!'
+          this.contadorNo=null
+          this.contadorSi=null
+          console.log(this.contadorSi);
+        }
+      }else{
+        this.contadorNo++;
+        if(this.contadorNo===3){
+        this.respuesta="Mejor Suerte para la proxima :("
+        this.contadorNo=null
+        this.contadorSi=null
       }
+      }
+
+    }
+
     },
+
+    // pregunta(value, oldValue) {
+    //   console.log(value);
+    //   console.log(oldValue);
+    //   if (value.includes("?")) {
+    //     console.log("consumio el Api");
+    //     this.consumirApi()
+    //   }
+    // },
   },
 
   methods: {
@@ -51,6 +84,14 @@ export default {
         this.respuesta = answer;
     },
   },
+
+  perdedor(){
+    this.respuesta='Mejor Suerte para la proxima :('
+  },
+
+  ganador(){
+    this.respuesta='Felicidades Usted ha Ganado!!!'
+  }
 };
 </script>
 
@@ -89,13 +130,19 @@ h3,h2{
   margin-top: 0px;
 }
 
-input{
+button{
+  padding: 15px;
+  font-size: xx-large;
+  border-radius: 25px;
+}
+
+/*input{
   width: 250px;
   padding: 15px;
   font-size: 20px;
   border-radius: 5px;
   border: none;
-}
+}*/
 
 p{
   font-size: 20px;
