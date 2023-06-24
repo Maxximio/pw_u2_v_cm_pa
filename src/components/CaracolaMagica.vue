@@ -1,11 +1,11 @@
 <template>
-  
-    <h1>Caracola Magica</h1>
+    
+  <h1>Caracola Magica</h1>
+
     <img v-if="imagen"
       :src="imagen"
       alt="No se puede presentar"
     />
-
 
     <div class="bg-dark">
     </div>
@@ -17,11 +17,10 @@
       <h3>{{respuesta}}</h3>
     </div>
   </div>
-
-
 </template>
 
 <script>
+
 export default {
   data() {
     return {
@@ -36,6 +35,8 @@ export default {
       console.log(value);
       console.log(oldValue);
       if (value.includes("?")) {
+        this.pregunta=''
+        this.respuesta='espere Porfavor...'
         console.log("consumio el Api");
         this.consumirApi()
       }
@@ -52,9 +53,11 @@ export default {
     },
   },
 };
+
 </script>
 
 <style>
+
 /* .container {
   align-items: center;
   justify-content: center;
@@ -79,14 +82,18 @@ img, .bg-dark{
 
 }
 
-.container{
+.container,h1{
   position: relative;
   color: aliceblue;
 }
 
-h3,h2{
+h3,h2,h1{
   font-size: 100px;
   margin-top: 0px;
+}
+
+h1{
+  color: floralwhite;
 }
 
 input{
@@ -99,7 +106,9 @@ input{
 
 p{
   font-size: 20px;
-  margin-top: 10px;
+  margin-top: 40px;
 }
 
+
+ 
 </style>

@@ -207,3 +207,22 @@ comunmente el frontend con el backend
 
 - cada vez que ejecutemos el fetch debemos esperar una respuesta , se usa el await(siempre que use el **await** debo tambien utilizar el **async**).
 
+- se tiene que usar el await desde afuera porque la espera se hereda.
+
+- el await (la espera) depende de la logica de negocio.
+
+## Declaración de estilos exrternos en Vue.
+
+- se agrega en el main.js en forma de import.
+
+## Modulos
+- los módulos son una manera de organizar
+
+- componentes: Estos componentes son **reutilizables** dentro de diferentes páginas web.
+- services: si en algún momento tengo una lógica (no se trata de lógica de negocios)
+
+- helpers: Carpeta que tiene un archivo que será el cliente del archivo (consumir el Api), un archivo por cada Api.
+
+- router: se colocan las configuraciones de las rutas de mi página.
+
+- store: hace alución a una fuente en donde se colocarán archivos que se usarán en el proyecto (como archivos multimedia), también podriamos usar img para carpeta de imagenes, pero lo importante es mantener la estructura de módulos.
