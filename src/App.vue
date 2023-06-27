@@ -1,14 +1,14 @@
 <template>
-  <CaracolaMagica></CaracolaMagica>
+  <Maybe></Maybe>
 </template>
 
 <script>
-import CaracolaMagica from "./components/CaracolaMagica.vue";
+import Maybe from './components/Maybe.vue';
 
 export default {
   name: "App",
   components: {
-    CaracolaMagica,
+    Maybe,
   },
 };
 </script>

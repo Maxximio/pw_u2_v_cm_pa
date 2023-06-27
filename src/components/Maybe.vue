@@ -1,24 +1,20 @@
 <template>
-  
-    <h1>Caracola Magica</h1>
-    <img v-if="imagen"
-      :src="imagen"
-      alt="No se puede presentar"
-    />
+  <h1>Maybe?</h1>
+  <h2>Este programa devuelve un maybe de la API</h2>
 
+  <img v-if="imagen" :src="imagen" alt="No se puede presentar" />
 
-    <div class="bg-dark">
-    </div>
+  <div class="bg-dark"></div>
   <div class="container">
     <input v-model="pregunta" placeholder="Ingrese su pregunta" />
-    <p>Recuerda presionar Enter para obtener tu respuesta</p>
+
     <div>
-      <h2>{{pregunta}}</h2>
-      <h3>{{respuesta}}</h3>
+      <h2>{{ pregunta }}</h2>
+      <h3>{{ respuesta }}</h3>
     </div>
   </div>
 
-
+  <p>Tiempo máximo de espera :2500s</p>
 </template>
 
 <script>
@@ -37,18 +33,27 @@ export default {
       console.log(oldValue);
       if (value.includes("?")) {
         console.log("consumio el Api");
-        this.consumirApi()
+        this.consumirApi();
       }
     },
   },
 
   methods: {
     async consumirApi() {
-      const {answer, image} = await fetch("https://yesno.wtf/api").then((r) =>
+      const { answer, image } = await fetch("https://yesno.wtf/api").then((r) =>
         r.json()
       );
+      console.log(answer);
+      if (answer == "maybe") {
         this.imagen = image;
         this.respuesta = answer;
+      } else {
+        this.respuesta = answer
+        this.consumirApi();
+
+      }
+
+     
     },
   },
 };
@@ -62,7 +67,8 @@ export default {
   display: grid;
 } */
 
-img, .bg-dark{
+img,
+.bg-dark {
   height: 100vh;
   width: 100vw;
 
@@ -73,23 +79,22 @@ img, .bg-dark{
   top: 0px;
 }
 
-.bg-dark{
-
+.bg-dark {
   background-color: rgba(0, 0, 0, 0.4);
-
 }
 
-.container{
+.container {
   position: relative;
   color: aliceblue;
 }
 
-h3,h2{
+h3,
+h2 {
   font-size: 100px;
   margin-top: 0px;
 }
 
-input{
+input {
   width: 250px;
   padding: 15px;
   font-size: 20px;
@@ -97,9 +102,8 @@ input{
   border: none;
 }
 
-p{
+p {
   font-size: 20px;
   margin-top: 10px;
 }
-
 </style>
