@@ -219,10 +219,17 @@ comunmente el frontend con el backend
 - los módulos son una manera de organizar
 
 - componentes: Estos componentes son **reutilizables** dentro de diferentes páginas web.
-- services: si en algún momento tengo una lógica (no se trata de lógica de negocios)
+- services: si en algún momento tengo una lógica (no se trata de lógica de negocios).
 
-- helpers: Carpeta que tiene un archivo que será el cliente del archivo (consumir el Api), un archivo por cada Api.
+- helpers: Carpeta que tiene un archivo que será el **cliente** del archivo (consumir el Api), un archivo por cada Api.
 
 - router: se colocan las configuraciones de las rutas de mi página.
 
 - store: hace alución a una fuente en donde se colocarán archivos que se usarán en el proyecto (como archivos multimedia), también podriamos usar img para carpeta de imagenes, pero lo importante es mantener la estructura de módulos.
+
+
+- cada componente debe tener una funcionalidad bien determinada, y bien independiente, para eso debo tener claro que debo hacer
+
+- entre dos componentes se pueden comunicar dos componentes a traves del componente padre
+
+La palabra reservada `scoped` es para el alcance de los estilos dentro de un componente
