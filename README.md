@@ -232,4 +232,14 @@ comunmente el frontend con el backend
 
 - entre dos componentes se pueden comunicar dos componentes a traves del componente padre
 
-La palabra reservada `scoped` es para el alcance de los estilos dentro de un componente
+- La palabra reservada `scoped` es para el alcance de los estilos dentro de un componente.
+
+- cuando un componente necesita ejecutar logica de presesentacion, es correcto que se cree una programacion externa.
+
+- export default obtenerFachadaPokemon esto se hace para consumir el método desde un componente.
+
+- fase de montaje: cuando montamos el componente dentro de la página web (se renderiza) , cada una de estas fases son paropciones del OptionApi.
+
+- llamamos al mounted para contruir un metodo.
+
+- solo los metodos que construimos deben llevar el await y el async, mounted por otra parte es parte del Api y no lo necesita
