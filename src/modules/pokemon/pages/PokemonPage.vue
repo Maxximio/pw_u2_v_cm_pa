@@ -10,31 +10,26 @@
         <Image :pokemon-id="pokemonCorrecto.id" :muestraPokemon="showPokemon"> </Image>
         <Option :opciones="arregloPokemon" v-on:seleccionado="revisarSeleccion($event)"></Option>
 
-        <h2>Ascierta 10 veces el pokemon correcto y gana</h2>
 
         <div class="puntajes">
           <p>Puntaje: {{ puntaje }}</p>
           <p>Intentos: {{ intentos }}</p>
         </div>
 
-        <div>
-          <button v-if="mostrarSiguiente" @click="siguienteM">Siguiente</button>
-        </div>
+
+
+        <h2 v-if="ganador">Felicidades, Has Ganado!!!</h2>
+
+
+
+        <h2 v-if="perdedor">Has perdido, suerte para la proxima</h2>
+
+
+
+        <button v-if="mostrarSiguiente" @click="reiniciar">Reiniciar</button>
+
 
       </div>
-
-    </div>
-
-    <div v-if="ganador">
-      <h2>Felicidades, Has Ganado!!!</h2>
-    </div>
-
-    <div v-if="perdedor">
-      <h2>Has perdido, suerte para la proxima</h2>
-    </div>
-
-    <div class="boton" v-if="pokemonCorrecto">
-      <button @click="reiniciar">Reiniciar</button>
     </div>
   </div>
 </template>
@@ -82,40 +77,54 @@ export default {
       this.mostrarSiguiente = false
     },
     revisarSeleccion(idSeleccionado) {
-      console.log('evento en el padre')
 
-      console.log(idSeleccionado);
 
-      if (this.pokemonCorrecto.id == idSeleccionado) {
-        this.puntaje = this.puntaje + 1
-        this.showPokemon = true
-        this.mostrarSiguiente = true
-      } else {
-        this.intentos = this.intentos + 1
-      }
-
-      this.comprobar()
-
-    },
-    comprobar() {
-      if (this.intentos >= 10) {
+      if (this.intentos == 2) {
         this.perdedor = true
-        this.juegoActivo = false
+        this.mostrarSiguiente = true
+        this.intentos = this.intentos + 1
+      } else {
+
+        if (this.pokemonCorrecto.id == idSeleccionado) {
+          if (this.intentos == 0) {
+            this.puntaje = this.puntaje + 5
+            this.showPokemon = true
+            this.mostrarSiguiente = true
+            this.intentos = this.intentos + 1
+            this.ganador = true
+
+          } else if (this.intentos == 1) {
+            this.puntaje = this.puntaje + 2
+            this.showPokemon = true
+            this.mostrarSiguiente = true
+            this.intentos = this.intentos + 1
+            this.ganador = true
+          } else if (this.intentos == 2) {
+            this.puntaje = this.puntaje + 1
+            this.showPokemon = true
+            this.mostrarSiguiente = true
+            this.intentos = this.intentos + 1
+            this.ganador = true
+
+          }
+
+
+        } else {
+
+          this.intentos = this.intentos + 1
+
+        }
       }
-      if (this.puntaje >= 10) {
-        this.ganador = true
-        this.juegoActivo = false
-      }
+
+
+
+
     },
+
     siguienteM() {
       this.cargaJuegoInicial()
     },
-    ganador() {
-      this.ganador = true
-    },
-    perdedor() {
-      this.perdedor = true
-    },
+
     reiniciar() {
       this.puntaje = 0
       this.intentos = 0
