@@ -243,3 +243,8 @@ comunmente el frontend con el backend
 - llamamos al mounted para contruir un metodo.
 
 - solo los metodos que construimos deben llevar el await y el async, mounted por otra parte es parte del Api y no lo necesita
+
+- metodo para emitir metodos a la clase padre
+- cuando un componente, emite un evento y se lo bautiza, eso automaticamente, contruye un evento del coponente.
+
+- router: modulo que se encarga de gestionar la navegacion(link, redireccionamiento, path) de mi aplicacion web.
