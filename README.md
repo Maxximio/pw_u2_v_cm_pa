@@ -248,3 +248,25 @@ comunmente el frontend con el backend
 - cuando un componente, emite un evento y se lo bautiza, eso automaticamente, contruye un evento del coponente.
 
 - router: modulo que se encarga de gestionar la navegacion(link, redireccionamiento, path) de mi aplicacion web.
+
+
+# UNIDAD 3
+
+Dentro del router se hacen 2 configuraciones
+
+1. crear router.js dentro de una carpeta router(archivo para configurar las rutas de mi app)dos funcionalidades(configuracion del router, definicion de las rutas)
+
+2. Usar dentro del main.js(configuracion principal) 
+
+``` javascript
+
+import router from './router/router
+createApp(App).use(router).mount('#app')
+
+```
+
+3. Usar dentro de mi pagina principal
+
+Todo lo que no este declarado en mis rutas que me redireccione a una pagina wild card
+
+Lazy Fetching
