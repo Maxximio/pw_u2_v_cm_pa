@@ -1,14 +1,16 @@
 <template>
-    <div>
+    <div class="container">
+        <div class="menu">
         <!-- <a href="/">Bienvenido</a>
         <a href="#/juego">Juego</a>
         <a href="#/premios">Premios</a>
         <a href="#/poke">Pokemon</a> -->
 
         <router-link to="/">Bienvenido</router-link>
-        <router-link to="/juego">Juego</router-link>
+        <router-link to="/juego">Reglas</router-link>
         <router-link to="/premios">Premios</router-link>
-        <router-link to="/poke">Pokemon</router-link>
+        <router-link to="/poke">Juega ya!</router-link>
+        </div>
     </div>
 </template>
 
@@ -19,15 +21,24 @@
 </script>
 
 <style scoped>
-div{
-    padding: 0 30px;
 
+.container{
+    display: flex;
+    justify-content: center;
+}
+.menu{
+    background-color: white;
+    border-style: groove;
+    border-radius: 20px;
+    border-color: black;
+    padding: 10px;
 }
 
 div a{
     font-weight: bold;
-    color: blue;
-    margin: 0 10px;
+    color:cornflowerblue;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 
