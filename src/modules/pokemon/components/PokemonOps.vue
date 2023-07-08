@@ -1,13 +1,15 @@
 <template>
   <div class="container">
-    <ul>
-      <!-- <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li> -->
-        <li v-for="pokemon in opciones" :key="pokemon.id" @click="$emit('seleccionado',pokemon.id)">{{pokemon.nombre}}</li>
 
-    </ul>
+
+    <div class="items">
+      <ul>
+        
+          <li v-for="pokemon in opciones" :key="pokemon.id" @click="$emit('seleccionado',pokemon.id)">{{pokemon.nombre}}</li>
+  
+      </ul>
+    </div>
+    
   </div>
 </template>
 
@@ -29,7 +31,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 .container {
     display: grid;
     justify-content: center;
@@ -43,7 +45,7 @@ ul {
 li {
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  background-color: white;
+  
   margin-bottom: 10px;
   width: 200px;
   cursor: pointer;
